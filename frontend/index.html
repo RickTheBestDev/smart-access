@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Smart Access | Painel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div>
+      <p class="eyebrow">SENAI · PROJETO INTEGRADOR IoT</p>
+      <h1>Smart Access</h1>
+      <p class="subtitle">Monitoramento e controle de cancela</p>
+    </div>
+    <div id="connection" class="pill">Verificando API...</div>
+  </header>
+
+  <main>
+    <section class="cards">
+      <article class="card"><span>Estado da cancela</span><strong id="barrierState">—</strong></article>
+      <article class="card"><span>Modo</span><strong id="mode">—</strong></article>
+      <article class="card"><span>Distância</span><strong id="distance">—</strong></article>
+      <article class="card"><span>Presença</span><strong id="presence">—</strong></article>
+    </section>
+
+    <section class="panel">
+      <h2>Controle</h2>
+      <p>Os comandos remotos reais exigem que a API esteja conectada ao broker MQTT e ao gateway.</p>
+      <div class="buttons">
+        <button data-command="OPEN">Abrir cancela</button>
+        <button data-command="CLOSE" class="secondary">Fechar cancela</button>
+        <button data-command="MODE_AUTO" class="secondary">Modo automático</button>
+        <button data-command="MODE_MANUAL" class="secondary">Modo manual</button>
+      </div>
+      <p id="feedback" role="status"></p>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading">
+        <h2>Histórico de eventos</h2>
+        <button id="refresh" class="secondary">Atualizar</button>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Data/hora</th><th>Tipo</th><th>Mensagem</th><th>Distância</th><th>Estado</th></tr></thead>
+          <tbody id="events"><tr><td colspan="5">Carregando...</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel demo">
+      <h2>Teste local (sem hardware)</h2>
+      <p>Use para validar a API, o banco e a interface antes da integração física.</p>
+      <label for="demoDistance">Distância simulada (cm)</label>
+      <input id="demoDistance" type="number" min="0" max="450" step="0.5" value="18.5">
+      <button id="simulate">Simular leitura</button>
+    </section>
+  </main>
+  <footer>Smart Access · Protótipo educacional. Não é um sistema certificado de segurança.</footer>
+  <script src="app.js"></script>
+</body>
+</html>

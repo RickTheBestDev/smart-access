@@ -1,0 +1,33 @@
+:root { font-family: Inter, system-ui, Arial, sans-serif; color: #172033; background: #f3f6fb; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+header { padding: 28px max(20px, calc((100% - 1100px)/2)); background: #14233b; color: white; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+h1 { margin: 4px 0; font-size: clamp(2rem, 4vw, 3rem); }
+.eyebrow { font-size: .75rem; letter-spacing: .12em; color: #a9c6ff; margin: 0; }
+.subtitle { color: #d3deef; margin: 6px 0 0; }
+.pill { background: #35445c; border-radius: 999px; padding: 10px 14px; font-size: .9rem; }
+main { max-width: 1100px; margin: 26px auto; padding: 0 18px; }
+.cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.card, .panel { background: white; border: 1px solid #e1e7f0; border-radius: 14px; box-shadow: 0 4px 18px #14233b0a; }
+.card { padding: 20px; display: flex; flex-direction: column; gap: 12px; }
+.card span { color: #65718a; font-size: .9rem; }
+.card strong { font-size: 1.4rem; overflow-wrap: anywhere; }
+.panel { margin-top: 18px; padding: 22px; }
+h2 { margin: 0 0 12px; font-size: 1.2rem; }
+p { color: #65718a; line-height: 1.5; }
+.buttons { display: flex; flex-wrap: wrap; gap: 10px; }
+button { border: 0; border-radius: 9px; background: #2459c4; color: white; padding: 11px 15px; cursor: pointer; font-weight: 650; }
+button:hover { filter: brightness(.94); }
+button:disabled { opacity: .5; cursor: not-allowed; }
+button.secondary { background: #e8edf6; color: #24334c; }
+#feedback { min-height: 1.5em; }
+.section-heading { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; text-align: left; font-size: .9rem; }
+th, td { border-bottom: 1px solid #e8edf4; padding: 12px 10px; vertical-align: top; }
+th { color: #65718a; font-weight: 650; }
+.demo label { display: block; margin: 12px 0 6px; }
+input { padding: 10px; border: 1px solid #cbd5e5; border-radius: 8px; margin-right: 8px; width: 140px; }
+footer { text-align: center; padding: 20px; color: #65718a; font-size: .85rem; }
+@media (max-width: 760px) { .cards { grid-template-columns: repeat(2, 1fr); } header { align-items: flex-start; flex-direction: column; } }
+@media (max-width: 420px) { .cards { grid-template-columns: 1fr 1fr; } .card { padding: 14px; } }

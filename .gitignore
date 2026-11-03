@@ -1,0 +1,12 @@
+# Ambiente virtual
+.venv/
+
+# Arquivos Python temporários
+__pycache__/
+*.py[cod]
+
+# Configurações privadas
+.env
+
+# Banco de dados local
+backend/smartaccess.db
